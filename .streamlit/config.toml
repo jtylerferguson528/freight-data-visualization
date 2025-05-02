@@ -1,0 +1,11 @@
+[server]
+# The address to listen on for connections.
+# Default: localhost
+headless = true
+
+[theme]
+primaryColor = "#4A90E2"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
+font = "sans serif" 

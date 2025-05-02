@@ -1,13 +1,18 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "logistics-loader-app"
 version = "0.1.0"
-description = "Logistics truck weight tracking application for supply chain stops"
+description = "A Streamlit application for tracking truck weights"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "streamlit>=1.44.0",
-    "pandas>=2.2.0",
-    "plotly>=6.0.0",
+    "streamlit",
+    "pandas",
+    "plotly",
+    "pytest",
 ]
 
 [project.optional-dependencies]
@@ -15,9 +20,12 @@ dev = [
     "pytest>=8.0.0",
 ]
 
-[build-system]
-requires = ["setuptools>=65.0"]
-build-backend = "setuptools.build_meta"
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.setuptools]
+packages = ["app"]
+include-package-data = true
+
+[tool.setuptools.exclude-package-data]
+"*" = ["*.pyc", "__pycache__", "*.pyo"]
